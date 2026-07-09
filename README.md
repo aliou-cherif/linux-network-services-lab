@@ -13,7 +13,7 @@ This project is designed as a practical portfolio project for Linux system admin
 | Machine | Role | Operating System | Hostname | IP Address |
 |---|---|---|---|---|
 | Rocky Server | Main network services server | Rocky Linux 9.8 | server.lelouch.org | 192.168.200.3/24 |
-| Ubuntu Client | Testing client machine | Ubuntu 24.04.4 LTS | client.lelouch.org | 192.168.200.4/24 |
+| Ubuntu Client | Testing client machine | Ubuntu 24.04.4 LTS | client.lelouch.org | 192.168.200.80/24 |
 
 ## Services Covered
 
@@ -47,12 +47,14 @@ linux-network-services-lab/
 |---|---|
 | [Lab Environment Setup](docs/01-lab-environment.md) | VirtualBox network setup, server static IP, client dynamic IP, hostname configuration and connectivity test |
 | [DNS Server Configuration](docs/02-dns-server.md) | BIND DNS configuration with forward and reverse lookup zones |
+| [DHCP Server Configuration](docs/03-dhcp-server.md) | DHCP server configuration on Rocky Linux with automatic IP assignment for Ubuntu |
 
 ## Configuration Files
 
 | Service | Configuration Folder |
 |---|---|
 | DNS | [config/dns](config/dns) |
+| DHCP | [config/dhcp](config/dhcp) |
 
 ## Project Status
 
@@ -62,7 +64,8 @@ Completed sections:
 
 - Lab environment setup
 - DNS server configuration
+- DHCP server configuration
 
 Next section:
 
-- DHCP server configuration
+- FTP / FTPS server configuration
