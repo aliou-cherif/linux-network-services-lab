@@ -1,0 +1,22 @@
+myhostname = mail.lelouch.org
+mydomain = lelouch.org
+myorigin = $mydomain
+
+inet_interfaces = all
+inet_protocols = ipv4
+
+mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain
+mynetworks = 127.0.0.0/8, 192.168.200.0/24
+
+home_mailbox = Maildir/
+
+smtpd_tls_cert_file = /etc/ssl/mail/mailserver.crt
+smtpd_tls_key_file = /etc/ssl/mail/mailserver.key
+smtpd_tls_security_level = may
+
+smtpd_sasl_type = dovecot
+smtpd_sasl_path = private/auth
+smtpd_sasl_auth_enable = yes
+smtpd_tls_auth_only = yes
+
+smtpd_recipient_restrictions = permit_mynetworks, permit_sasl_authenticated, reject_unauth_destination
