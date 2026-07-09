@@ -23,9 +23,9 @@ This project is designed as a practical portfolio project for Linux system admin
 - DNS Server using BIND
 - DHCP Server
 - FTP / FTPS Server using vsftpd
+- Mail Server using Postfix and Dovecot
 - NFS Server
 - Apache Web Server
-- Mail Server
 - Honeypot
 - SSH Server
 - Firewall rules
@@ -49,6 +49,7 @@ linux-network-services-lab/
 | [DNS Server Configuration](docs/02-dns-server.md) | BIND DNS configuration with forward and reverse lookup zones |
 | [DHCP Server Configuration](docs/03-dhcp-server.md) | DHCP server configuration on Rocky Linux with automatic IP assignment for Ubuntu |
 | [FTP and FTPS Server Configuration](docs/04-ftp-ftps-server.md) | FTP server configuration using vsftpd, secured with SSL/TLS and tested using FileZilla |
+| [Mail Server Configuration](docs/05-mail-server.md) | Mail server configuration using Postfix and Dovecot, tested with Thunderbird |
 
 ## Configuration Files
 
@@ -57,6 +58,7 @@ linux-network-services-lab/
 | DNS | [config/dns](config/dns) |
 | DHCP | [config/dhcp](config/dhcp) |
 | FTP / FTPS | [config/ftp](config/ftp) |
+| Mail | [config/mail](config/mail) |
 
 ## Project Status
 
@@ -68,6 +70,7 @@ Completed sections:
 - DNS server configuration
 - DHCP server configuration
 - FTP / FTPS server configuration
+- Mail server configuration
 
 Next section:
 
