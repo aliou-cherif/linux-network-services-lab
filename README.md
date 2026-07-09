@@ -36,6 +36,9 @@ The goal of this project is to configure and test essential Linux network servic
 |---|---|
 | [Lab Environment Setup](docs/01-lab-environment.md) | Initial VM setup, static IP addressing and connectivity test |
 
-## Project Status
+## Documentation
 
-In progress.
+| Section | Description |
+|---|---|
+| [Lab Environment Setup](docs/01-lab-environment.md) | Initial VM setup, static IP addressing and connectivity test |
+| [DNS Server Configuration](docs/02-dns-server.md) | BIND DNS server configuration with forward and reverse lookup zones |
