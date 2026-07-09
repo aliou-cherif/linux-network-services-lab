@@ -1,17 +1,26 @@
 # Linux Network Services Lab
 
-A virtual Linux lab for configuring DNS, DHCP, FTP, NFS, SSH, Apache, Mail, Firewall and Honeypot services.
+A virtual Linux lab for configuring and testing common network services using Rocky Linux Server and Ubuntu Client virtual machines.
 
 ## Project Objective
 
-The goal of this project is to configure and test essential Linux network services in a virtual environment using Rocky Linux Server and Ubuntu Client virtual machines.
+The goal of this project is to build a small Linux-based network services environment and document the configuration, testing, and troubleshooting process.
+
+This project is designed as a practical portfolio project for Linux system administration, networking, and security fundamentals.
+
+## Lab Environment
+
+| Machine | Role | Operating System | Hostname | IP Address |
+|---|---|---|---|---|
+| Rocky Server | Main network services server | Rocky Linux 9.8 | server.lelouch.org | 192.168.200.3/24 |
+| Ubuntu Client | Testing client machine | Ubuntu 24.04.4 LTS | client.lelouch.org | 192.168.200.4/24 |
 
 ## Services Covered
 
-- Static IP configuration
+- Virtual machine network setup
+- Static IP configuration on the Rocky Linux server
 - Hostname configuration
-- Users, groups, permissions and ownership
-- DNS Server
+- DNS Server using BIND
 - DHCP Server
 - FTP / FTPS Server
 - NFS Server
@@ -20,19 +29,40 @@ The goal of this project is to configure and test essential Linux network servic
 - Honeypot
 - SSH Server
 - Firewall rules
-- ACL
-- System logs and troubleshooting
+- Logs and troubleshooting
 
-## Lab Environment
+## Repository Structure
 
-| Machine | Role | Operating System | IP Address |
-|---|---|---|---|
-| Server | Main network services server | Rocky Linux | To be added |
-| Client | Testing client machine | Ubuntu Desktop | To be added |
+```text
+linux-network-services-lab/
+├── README.md
+├── docs/
+├── config/
+└── screenshots/
+```
 
 ## Documentation
 
 | Section | Description |
 |---|---|
-| [Lab Environment Setup](docs/01-lab-environment.md) | Initial VM setup, static IP addressing and connectivity test |
-| [DNS Server Configuration](docs/02-dns-server.md) | BIND DNS server configuration with forward and reverse lookup zones |
+| [Lab Environment Setup](docs/01-lab-environment.md) | VirtualBox network setup, server static IP, client dynamic IP, hostname configuration and connectivity test |
+| [DNS Server Configuration](docs/02-dns-server.md) | BIND DNS configuration with forward and reverse lookup zones |
+
+## Configuration Files
+
+| Service | Configuration Folder |
+|---|---|
+| DNS | [config/dns](config/dns) |
+
+## Project Status
+
+In progress.
+
+Completed sections:
+
+- Lab environment setup
+- DNS server configuration
+
+Next section:
+
+- DHCP server configuration
