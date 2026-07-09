@@ -1,0 +1,17 @@
+$TTL 86400 
+@	IN	SOA	server.lelouch.org.	root.lelouch.org. (
+			2001062501 ; serial                     
+			21600      ; refresh after 6 hours                     
+			3600       ; retry after 1 hour                     
+			604800     ; expire after 1 week                     
+			86400 )    ; minimum TTL of 1 day  
+		     
+;NS records for name servers , name server information		           
+@	IN	NS	server.lelouch.org.              
+	
+     
+;A record and IP address for name server	
+server  	IN	A	192.168.200.3
+
+;A record and IP address to hostname
+client  	IN	A	192.168.200.4
