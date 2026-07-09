@@ -43,7 +43,7 @@ The `named` service was enabled and started on the Rocky Linux server.
 sudo systemctl status named
 ```
 
-![DNS named status](../screenshots/dns/dns-named-status.png)
+![DNS named status](../screenshots/dns/dns-named-status.jpg)
 
 ## named.conf Zone Configuration
 
