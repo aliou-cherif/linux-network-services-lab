@@ -4,7 +4,7 @@
 
 The objective of this section is to configure a local DNS server using BIND on Rocky Linux.
 
-The DNS server will resolve local hostnames inside the lab network.
+The DNS server is used to resolve local hostnames inside the lab network.
 
 ## Lab Information
 
@@ -19,11 +19,13 @@ BIND was installed and configured on the Rocky Linux server.
 
 The DNS configuration includes:
 
+- Main BIND configuration file
 - Forward lookup zone
 - Reverse lookup zone
-- DNS service validation
+- Zone file validation
 - Firewall rule for DNS traffic
-- DNS testing from both Rocky Server and Ubuntu Client
+- DNS testing from Rocky Server
+- DNS testing from Ubuntu Client
 
 ## Configuration Files
 
@@ -52,8 +54,9 @@ The main BIND configuration file was updated with two DNS zones:
 - `lelouch.org`
 - `200.168.192.in-addr.arpa`
 
-The first zone is used for forward DNS resolution.  
-The second zone is used for reverse DNS resolution.
+The `lelouch.org` zone is used for forward DNS resolution.
+
+The `200.168.192.in-addr.arpa` zone is used for reverse DNS resolution.
 
 ![DNS named.conf zones](../screenshots/dns/dns-named-conf-zones.png)
 
@@ -61,7 +64,7 @@ The second zone is used for reverse DNS resolution.
 
 The forward lookup zone maps hostnames to IP addresses.
 
-Example:
+Examples:
 
 ```text
 server.lelouch.org → 192.168.200.3
@@ -74,7 +77,7 @@ client.lelouch.org → 192.168.200.4
 
 The reverse lookup zone maps IP addresses back to hostnames.
 
-Example:
+Examples:
 
 ```text
 192.168.200.3 → server.lelouch.org
@@ -98,7 +101,9 @@ Both zone files returned `OK`, confirming that the DNS zone files were valid.
 
 ## Firewall Configuration
 
-DNS uses port 53. The firewall was configured to allow DNS traffic using both UDP and TCP.
+DNS uses port 53.
+
+The firewall was configured to allow DNS traffic over both UDP and TCP.
 
 ```bash
 firewall-cmd --permanent --add-port=53/udp
@@ -110,7 +115,7 @@ firewall-cmd --reload
 
 ## Rocky Server DNS Settings
 
-The Rocky Linux server was configured to use itself as the DNS server.
+The Rocky Linux server was configured to use itself as one of its DNS resolvers.
 
 ```text
 DNS Server: 192.168.200.3
@@ -127,7 +132,7 @@ nslookup server.lelouch.org
 nslookup client.lelouch.org
 ```
 
-The server successfully resolved both hostnames.
+The Rocky server successfully resolved both local hostnames.
 
 ![Rocky DNS nslookup test](../screenshots/dns/dns-rocky-nslookup-test.png)
 
@@ -163,4 +168,4 @@ The DNS server was configured successfully.
 
 The Rocky Linux server can resolve local DNS records, and the Ubuntu client can use the Rocky server as its DNS resolver.
 
-The DNS configuration is working correctly for both forward and reverse lookup zones.
+Both forward and reverse DNS zone files were validated successfully.
