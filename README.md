@@ -22,7 +22,7 @@ This project is designed as a practical portfolio project for Linux system admin
 - Hostname configuration
 - DNS Server using BIND
 - DHCP Server
-- FTP / FTPS Server
+- FTP / FTPS Server using vsftpd
 - NFS Server
 - Apache Web Server
 - Mail Server
@@ -48,6 +48,7 @@ linux-network-services-lab/
 | [Lab Environment Setup](docs/01-lab-environment.md) | VirtualBox network setup, server static IP, client dynamic IP, hostname configuration and connectivity test |
 | [DNS Server Configuration](docs/02-dns-server.md) | BIND DNS configuration with forward and reverse lookup zones |
 | [DHCP Server Configuration](docs/03-dhcp-server.md) | DHCP server configuration on Rocky Linux with automatic IP assignment for Ubuntu |
+| [FTP and FTPS Server Configuration](docs/04-ftp-ftps-server.md) | FTP server configuration using vsftpd, secured with SSL/TLS and tested using FileZilla |
 
 ## Configuration Files
 
@@ -55,6 +56,7 @@ linux-network-services-lab/
 |---|---|
 | DNS | [config/dns](config/dns) |
 | DHCP | [config/dhcp](config/dhcp) |
+| FTP / FTPS | [config/ftp](config/ftp) |
 
 ## Project Status
 
@@ -65,7 +67,8 @@ Completed sections:
 - Lab environment setup
 - DNS server configuration
 - DHCP server configuration
+- FTP / FTPS server configuration
 
 Next section:
 
-- FTP / FTPS server configuration
+- NFS server configuration
