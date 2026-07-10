@@ -1,0 +1,1 @@
+192.168.200.3:/var/nfs/general /nfs/Shared_From_server nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0
