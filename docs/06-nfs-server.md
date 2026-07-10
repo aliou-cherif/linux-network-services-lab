@@ -103,7 +103,7 @@ The required NFS services were allowed through the Rocky firewall.
 ```bash
 sudo firewall-cmd --permanent --add-service={nfs,nfs3,rpc-bind,mountd}
 sudo firewall-cmd --reload
-sudo firewall-cmd --list-all
+sudo firewall-cmd --zone=public --list-all
 ```
 
 ![NFS firewall rules](../screenshots/nfs/nfs-firewall-rules.png)
@@ -114,7 +114,7 @@ Test files were created inside the shared directory on the Rocky server.
 
 ```bash
 cd /var/nfs/general
-sudo touch NFS-Test-File{1..3}.txt
+sudo touch ProjectDoc{1..4}.txt
 ls -l
 ```
 
@@ -127,8 +127,7 @@ These files were used to verify that Ubuntu could see the shared directory conte
 On Ubuntu, the NFS client package was installed using `nfs-common`.
 
 ```bash
-sudo apt update
-sudo apt install -y nfs-common
+sudo apt install nfs-common
 ```
 
 ![NFS Ubuntu client install](../screenshots/nfs/nfs-ubuntu-client-install.png)
@@ -195,7 +194,7 @@ The permanent mount was tested using:
 
 ```bash
 sudo mount -a
-df -h
+df -h | grep nfs
 ls -l /nfs/Shared_From_server
 ```
 
