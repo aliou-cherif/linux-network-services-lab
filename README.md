@@ -50,6 +50,7 @@ linux-network-services-lab/
 | [DHCP Server Configuration](docs/03-dhcp-server.md) | DHCP server configuration on Rocky Linux with automatic IP assignment for Ubuntu |
 | [FTP and FTPS Server Configuration](docs/04-ftp-ftps-server.md) | FTP server configuration using vsftpd, secured with SSL/TLS and tested using FileZilla |
 | [Mail Server Configuration](docs/05-mail-server.md) | Mail server configuration using Postfix and Dovecot, tested with Thunderbird |
+| [NFS Server Configuration](docs/06-nfs-server.md) | NFS file sharing configuration between Rocky Linux Server and Ubuntu Client, including permanent mount setup |
 
 ## Configuration Files
 
@@ -59,6 +60,7 @@ linux-network-services-lab/
 | DHCP | [config/dhcp](config/dhcp) |
 | FTP / FTPS | [config/ftp](config/ftp) |
 | Mail | [config/mail](config/mail) |
+| NFS | [config/nfs](config/nfs) |
 
 ## Project Status
 
@@ -71,7 +73,8 @@ Completed sections:
 - DHCP server configuration
 - FTP / FTPS server configuration
 - Mail server configuration
+- NFS server configuration
 
 Next section:
 
-- NFS server configuration
+- SSH server configuration
