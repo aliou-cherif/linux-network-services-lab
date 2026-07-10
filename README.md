@@ -26,7 +26,7 @@ This project is designed as a practical portfolio project for Linux system admin
 - Mail Server using Postfix and Dovecot
 - NFS Server
 - SSH Server
-- Apache Web Server
+- Apache Web Server with HTTPS
 - Honeypot
 - Firewall rules
 - Logs and troubleshooting
@@ -52,6 +52,7 @@ linux-network-services-lab/
 | [Mail Server Configuration](docs/05-mail-server.md) | Mail server configuration using Postfix and Dovecot, tested with Thunderbird |
 | [NFS Server Configuration](docs/06-nfs-server.md) | NFS file sharing configuration between Rocky Linux Server and Ubuntu Client, including permanent mount setup |
 | [SSH Server Configuration](docs/07-ssh-server.md) | Secure remote access configuration from Ubuntu Client to Rocky Linux Server using SSH |
+| [Apache Web Server Configuration](docs/08-apache-web-server.md) | Apache HTTP and HTTPS web hosting configuration with a self-signed SSL/TLS certificate and a professional project website |
 
 ## Configuration Files
 
@@ -63,6 +64,7 @@ linux-network-services-lab/
 | Mail | [config/mail](config/mail) |
 | NFS | [config/nfs](config/nfs) |
 | SSH | [config/ssh](config/ssh) |
+| Apache | [config/apache](config/apache) |
 
 ## Project Status
 
@@ -77,7 +79,8 @@ Completed sections:
 - Mail server configuration
 - NFS server configuration
 - SSH server configuration
+- Apache Web Server configuration with HTTPS
 
 Next section:
 
-- Apache Web Server configuration
+- Honeypot configuration
