@@ -28,7 +28,7 @@ This project is designed as a practical portfolio project for Linux system admin
 - SSH Server
 - Apache Web Server with HTTPS
 - Cowrie SSH Honeypot
-- Firewall rules
+- Firewall review using firewalld
 - Logs and troubleshooting
 
 ## Repository Structure
@@ -54,6 +54,7 @@ linux-network-services-lab/
 | [SSH Server Configuration](docs/07-ssh-server.md) | Secure remote access configuration from Ubuntu Client to Rocky Linux Server using SSH |
 | [Apache Web Server Configuration](docs/08-apache-web-server.md) | Apache HTTP and HTTPS web hosting configuration with a self-signed SSL/TLS certificate and a professional project website |
 | [Cowrie SSH Honeypot Configuration](docs/09-cowrie-honeypot.md) | Cowrie SSH honeypot configuration on port 2222, tested from Ubuntu and verified using standard and JSON logs |
+| [Firewall Review with firewalld](docs/10-firewall-review.md) | Review of firewalld status, default zone, active interface, allowed services, allowed ports, and security purpose |
 
 ## Configuration Files
 
@@ -67,6 +68,18 @@ linux-network-services-lab/
 | SSH | [config/ssh](config/ssh) |
 | Apache | [config/apache](config/apache) |
 | Honeypot | [config/honeypot](config/honeypot) |
+
+## Security and Monitoring
+
+This lab also includes security-related configurations and reviews:
+
+| Section | Purpose |
+|---|---|
+| SSH hardening | Root login disabled for safer remote administration |
+| FTPS | FTP secured using SSL/TLS |
+| HTTPS | Apache secured using a self-signed SSL/TLS certificate |
+| Cowrie Honeypot | Fake SSH service used to capture test login attempts and commands |
+| Firewall Review | Verification of allowed services and ports using firewalld |
 
 ## Project Status
 
@@ -83,7 +96,8 @@ Completed sections:
 - SSH server configuration
 - Apache Web Server configuration with HTTPS
 - Cowrie SSH honeypot configuration
+- Firewall review with firewalld
 
 Next section:
 
-- Firewall, ACL, and log review
+- Syslog server configuration
