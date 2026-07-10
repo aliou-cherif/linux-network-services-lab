@@ -114,7 +114,7 @@ linux-network-services-lab/
 
 ## Security and Monitoring Features
 
-This project also includes several security-focused configurations.
+This project includes several security-focused configurations.
 
 | Feature | Purpose |
 |---|---|
@@ -177,20 +177,6 @@ This helped make the project more realistic because Linux system administration 
 ## Project Status
 
 Completed for current scope.
-
-Completed sections:
-
-- Lab environment setup
-- DNS server configuration
-- DHCP server configuration
-- FTP / FTPS server configuration
-- Mail server configuration
-- NFS server configuration
-- SSH server configuration
-- Apache Web Server configuration with HTTPS
-- Cowrie SSH honeypot configuration
-- Firewall review with firewalld
-- Centralized Syslog server configuration
 
 Possible future improvements:
 
