@@ -25,9 +25,9 @@ This project is designed as a practical portfolio project for Linux system admin
 - FTP / FTPS Server using vsftpd
 - Mail Server using Postfix and Dovecot
 - NFS Server
+- SSH Server
 - Apache Web Server
 - Honeypot
-- SSH Server
 - Firewall rules
 - Logs and troubleshooting
 
@@ -51,6 +51,7 @@ linux-network-services-lab/
 | [FTP and FTPS Server Configuration](docs/04-ftp-ftps-server.md) | FTP server configuration using vsftpd, secured with SSL/TLS and tested using FileZilla |
 | [Mail Server Configuration](docs/05-mail-server.md) | Mail server configuration using Postfix and Dovecot, tested with Thunderbird |
 | [NFS Server Configuration](docs/06-nfs-server.md) | NFS file sharing configuration between Rocky Linux Server and Ubuntu Client, including permanent mount setup |
+| [SSH Server Configuration](docs/07-ssh-server.md) | Secure remote access configuration from Ubuntu Client to Rocky Linux Server using SSH |
 
 ## Configuration Files
 
@@ -61,6 +62,7 @@ linux-network-services-lab/
 | FTP / FTPS | [config/ftp](config/ftp) |
 | Mail | [config/mail](config/mail) |
 | NFS | [config/nfs](config/nfs) |
+| SSH | [config/ssh](config/ssh) |
 
 ## Project Status
 
@@ -74,7 +76,8 @@ Completed sections:
 - FTP / FTPS server configuration
 - Mail server configuration
 - NFS server configuration
+- SSH server configuration
 
 Next section:
 
-- SSH server configuration
+- Apache Web Server configuration
