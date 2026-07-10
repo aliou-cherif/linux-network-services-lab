@@ -17,7 +17,7 @@ This section shows the full configuration process:
 - Configuring HTTPS
 - Fixing the default SSL certificate path issue
 - Opening HTTPS access in the firewall
-- Testing the final professional website from Ubuntu
+- Testing the final professional website from Ubuntu using the local DNS hostname
 
 ## Lab Information
 
@@ -40,9 +40,12 @@ In simple terms:
 
 1. Apache runs on the Rocky Linux server.
 2. The website files are stored in `/var/www/lelouch.org`.
-3. Ubuntu accesses the website using the Rocky server IP address.
+3. Ubuntu accesses the website from the lab network.
 4. HTTP is tested first on port `80`.
 5. HTTPS is then configured on port `443` using a self-signed certificate.
+6. The final test is performed using the DNS hostname `server.lelouch.org`.
+
+The IP address was used during the first tests to confirm basic Apache connectivity. The final HTTPS test used the DNS hostname because it is more realistic and matches the Apache VirtualHost configuration.
 
 ## Configuration Files
 
@@ -313,6 +316,8 @@ Important settings:
 | `SSLCertificateKeyFile` | Points to the private SSL key |
 | `DocumentRoot` | Uses the same website directory as HTTP |
 
+The HTTPS VirtualHost uses `server.lelouch.org` as its main server name. This matches the DNS hostname used during the final browser test.
+
 ![Apache SSL VirtualHost config](../screenshots/apache/apache-ssl-virtualhost-config.png)
 
 ## SSL Default Configuration Fix
@@ -405,19 +410,31 @@ config/apache/index.html
 
 This shows the actual web page hosted by Apache.
 
-## Final HTTPS Website Test
+## Final HTTPS Website Test Using DNS
 
-The final professional website was tested from the Ubuntu client using HTTPS:
+The final professional website was tested from the Ubuntu client using the local DNS hostname:
 
 ```text
-https://192.168.200.3
+https://server.lelouch.org
 ```
 
-The browser displayed the professional lab website successfully.
+Using the DNS hostname is more realistic than using only the server IP address because the Apache VirtualHost was configured with:
+
+```apache
+ServerName server.lelouch.org
+```
+
+The SSL/TLS certificate was also generated for:
+
+```text
+CN=server.lelouch.org
+```
+
+This confirms that the Ubuntu client can access the Apache website using the local DNS name.
 
 Firefox still displayed `Not Secure` because the certificate is self-signed. This is expected in a local lab environment.
 
-The important result is that the website was reachable over HTTPS and Apache served the final web page correctly.
+The important result is that the website was reachable over HTTPS using the DNS hostname and Apache served the final professional web page correctly.
 
 ![Apache professional website HTTPS test](../screenshots/apache/apache-professional-website-https-test.png)
 
@@ -470,6 +487,7 @@ Common issues to check:
 | HTTPS fails | SSL certificate path incorrect |
 | Browser shows Not Secure | Self-signed certificate is being used |
 | Permission denied | Apache cannot read the web directory |
+| DNS name does not load | Client DNS resolver is not pointing to the Rocky DNS server |
 
 ## Result
 
@@ -477,6 +495,8 @@ Apache Web Server was successfully configured on Rocky Linux.
 
 The Ubuntu client was able to access the default Apache page, the first custom HTML page, and the final professional website.
 
-HTTPS was configured using a self-signed SSL/TLS certificate, and the final website was successfully accessed from Ubuntu using HTTPS.
+HTTPS was configured using a self-signed SSL/TLS certificate.
+
+The final professional website was successfully accessed from Ubuntu using HTTPS and the local DNS hostname `server.lelouch.org`.
 
 This confirms that Apache HTTP and HTTPS hosting are working correctly in the local lab environment.
