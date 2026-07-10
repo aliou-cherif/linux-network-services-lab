@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Network Services Lab</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0f172a;
+            color: #e5e7eb;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        header {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #1e3a8a, #0f172a);
+            border-bottom: 4px solid #38bdf8;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        header p {
+            font-size: 18px;
+            color: #cbd5e1;
+            max-width: 750px;
+        }
+
+        .badge {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 14px;
+            background: #16a34a;
+            color: white;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 40px 0;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #38bdf8;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+        }
+
+        .card h3 {
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .card p {
+            color: #cbd5e1;
+            font-size: 15px;
+        }
+
+        .status {
+            color: #22c55e;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #1e293b;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 14px;
+            border-bottom: 1px solid #334155;
+            text-align: left;
+        }
+
+        th {
+            background: #334155;
+            color: #ffffff;
+        }
+
+        td {
+            color: #cbd5e1;
+        }
+
+        .highlight {
+            color: #38bdf8;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #020617;
+            color: #94a3b8;
+            font-size: 14px;
+            border-top: 1px solid #334155;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Linux Network Services Lab</h1>
+            <p>
+                A practical Linux server administration project built with Rocky Linux Server
+                and Ubuntu Client. This lab demonstrates the configuration, testing, and
+                documentation of essential network services in a local environment.
+            </p>
+            <span class="badge">Apache HTTPS Web Server Active</span>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <h2>Lab Environment</h2>
+            <table>
+                <tr>
+                    <th>Machine</th>
+                    <th>Role</th>
+                    <th>Hostname</th>
+                    <th>IP Address</th>
+                </tr>
+                <tr>
+                    <td>Rocky Linux Server</td>
+                    <td>Main Network Services Server</td>
+                    <td>server.lelouch.org</td>
+                    <td>192.168.200.3</td>
+                </tr>
+                <tr>
+                    <td>Ubuntu Client</td>
+                    <td>Testing Client Machine</td>
+                    <td>client.lelouch.org</td>
+                    <td>192.168.200.80</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Configured Services</h2>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>DNS Server</h3>
+                    <p>BIND was configured to resolve local hostnames using forward and reverse lookup zones.</p>
+                    <p class="status">Status: Completed</p>
+                </div>
+
+                <div class="card">
+                    <h3>DHCP Server</h3>
+                    <p>Rocky Linux assigns IP addresses and network settings automatically to the Ubuntu client.</p>
+                    <p class="status">Status: Completed</p>
+                </div>
+
+                <div class="card">
+                    <h3>FTP / FTPS Server</h3>
+                    <p>vsftpd was configured for file transfer and secured using SSL/TLS encryption.</p>
+                    <p class="status">Status: Completed</p>
+                </div>
+
+                <div class="card">
+                    <h3>Mail Server</h3>
+                    <p>Postfix and Dovecot were configured to send and receive email using Thunderbird.</p>
+                    <p class="status">Status: Completed</p>
+                </div>
+
+                <div class="card">
+                    <h3>NFS Server</h3>
+                    <p>A shared directory was exported from Rocky and mounted from Ubuntu using NFS.</p>
+                    <p class="status">Status: Completed</p>
+                </div>
+
+                <div class="card">
+                    <h3>SSH Server</h3>
+                    <p>Secure remote administration was enabled using OpenSSH from Ubuntu to Rocky.</p>
+                    <p class="status">Status: Completed</p>
+                </div>
+
+                <div class="card">
+                    <h3>Apache Web Server</h3>
+                    <p>This web page is hosted using Apache HTTP Server with HTTPS enabled.</p>
+                    <p class="status">Status: Active</p>
+                </div>
+
+                <div class="card">
+                    <h3>Security Monitoring</h3>
+                    <p>Honeypot, firewall hardening, and logging will be added in the next stages of the project.</p>
+                    <p class="status">Status: In Progress</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Security Highlights</h2>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>Encrypted Access</h3>
+                    <p>HTTPS, FTPS, IMAPS, and SSH were used to secure remote access and data transfer.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Firewall Rules</h3>
+                    <p>Only required services and ports were opened using firewalld.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Service Verification</h3>
+                    <p>Each service was tested from the Ubuntu client and documented with screenshots.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        Linux Network Services Lab | Hosted on Rocky Linux using Apache HTTP Server | server.lelouch.org
+    </footer>
+</body>
+</html>
